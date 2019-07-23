@@ -39,11 +39,14 @@ def index():
     if user_password != password_confirm:
         password_error = "Passwords do not match."
         verify_password_error = "Passwords do not match."
-    if "@" not in user_email:
+    
+    if user_email  == "":
+        email_error == ''
+    elif "@" not in user_email:
         email_error = "Please enter a valid email address."
-    if "." not in user_email:
+    elif "." not in user_email:
         email_error = "Please enter a valid email address."
-    if " " in user_email:
+    elif " " in user_email:
         email_error= "Please enter a valid email address."
 
     if username_error == "" and password_error == "" and verify_password_error== "" and email_error == "":
